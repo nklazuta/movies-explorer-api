@@ -11,7 +11,6 @@ const MONGO_CONFIG = {
 };
 
 const CORS_CONFIG = {
-  exposedHeaders: '*',
   credentials: true,
 };
 
