@@ -10,7 +10,20 @@ const MONGO_CONFIG = {
   useUnifiedTopology: true,
 };
 
+const allowedCors = [
+  'https://diplom.nlazuta.nomoredomains.monster',
+  'http://diplom.nlazuta.nomoredomains.monster',
+  'http://localhost:3000',
+];
+
+const CORS_CONFIG = {
+  credentials: true,
+  origin: allowedCors,
+  DEFAULT_ALLOWED_METHODS: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+};
+
 module.exports = {
   LIMITER_CONFIG,
   MONGO_CONFIG,
+  CORS_CONFIG,
 };

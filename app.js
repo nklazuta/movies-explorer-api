@@ -17,24 +17,8 @@ const { PORT, MONGO_URL } = require('./utils/env-config');
 const {
   MONGO_CONFIG,
   LIMITER_CONFIG,
+  CORS_CONFIG,
 } = require('./utils/configs');
-
-const allowedCors = [
-  'https://diplom.nlazuta.nomoredomains.monster',
-  'http://diplom.nlazuta.nomoredomains.monster',
-  'localhost:3000',
-];
-
-const CORS_CONFIG = {
-  credentials: true,
-  origin: function checkCorsList(origin, callback) {
-    if (allowedCors.indexOf(origin) !== -1 || !origin) {
-      callback((null, true));
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-};
 
 const app = express();
 mongoose.connect(MONGO_URL, MONGO_CONFIG);
@@ -45,6 +29,7 @@ app.use(limiter);
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(cors(CORS_CONFIG));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
