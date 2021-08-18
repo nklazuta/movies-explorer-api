@@ -82,12 +82,14 @@ module.exports.login = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const { password: hash, ...publicUser } = user.toObject();
+      console.log(user);
 
       const token = jwt.sign(
         { _id: user._id },
         NODE_ENV === 'production' ? JWT_SECRET : JWT_SECRET_DEV,
         { expiresIn: '7d' },
       );
+      console.log(token);
 
       res
         .cookie('jwt', token, {
