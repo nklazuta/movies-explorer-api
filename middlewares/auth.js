@@ -13,6 +13,7 @@ module.exports = (req, res, next) => {
   const token = req.cookies.jwt;
 
   if (!token) {
+    console.log(token);
     return handleAuthError();
   }
 
@@ -20,6 +21,7 @@ module.exports = (req, res, next) => {
 
   try {
     payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : JWT_SECRET_DEV);
+    console.log(payload);
   } catch (err) {
     return handleAuthError();
   }

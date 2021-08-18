@@ -27,8 +27,6 @@ const limiter = rateLimit(LIMITER_CONFIG);
 app.use(requestLogger);
 app.use(limiter);
 app.use(helmet());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.use(cors(CORS_CONFIG));
 app.use(bodyParser.json());
