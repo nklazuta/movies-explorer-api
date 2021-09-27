@@ -7,7 +7,7 @@ Movies Explorer - сервис, в котором можно найти филь
 **Ссылка на проект**
 
 Ознакомиться с проектом:  
-Публичный IP-адрес сервера: 178.154.203.65  
+Публичный IP-адрес сервера: 178.154.255.99  
 Api: https://api.diplom.nlazuta.nomoredomains.monster/  
 Домен: https://diplom.nlazuta.nomoredomains.monster/  
 
