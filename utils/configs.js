@@ -19,7 +19,6 @@ const allowedCors = [
 const CORS_CONFIG = {
   credentials: true,
   origin: allowedCors,
-  DEFAULT_ALLOWED_METHODS: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
 
 module.exports = {
